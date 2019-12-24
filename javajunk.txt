@@ -1,0 +1,11 @@
+
+http://ceweb.uml.edu/jnair44745/project/process.html
+http://ceweb.uml.edu/jnair44745/project/process.html
+http://ceweb.uml.edu/jnair44745/project/process.html
+
+
+Search for a proper email address that includes "@" AND either one of these: ".com", ."org", or ."net"
+If the email address is incorrect, put up an alert box that says the email will not be sent. Re-enter a correct email addresss and resubmit.
+Also, if the alert message displays, be sure to reFOCUS the cursor on the email text box in the form.
+
+Fix process.html
