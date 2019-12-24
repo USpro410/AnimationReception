@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="smartmenus/sm-core-css.css">
     <link rel="stylesheet" href="smartmenus/sm-mymenu.css">
     <style>
-
         #gallery img {
             clear: right;
             float: right;
@@ -15,7 +14,6 @@
             padding-top: 10px;
             width: 315px;
         }
-
         #signup label.error {
             font-size: 0.8em;
             color: #F00;
@@ -23,15 +21,14 @@
             display: block;
             margin-left: 215px;
         }
-
         #signup input.error, #signup select.error {
             background: #FFA9B8;
             border: 1px solid red;
         }
     </style>
-    <script src="../_js/jquery.min.js"></script>
-    <script src="jquery_validate/jquery.validate.min.js"></script>
-    <script src="smartmenus/jquery.smartmenus.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
     <script>
         //Project 1
         $(document).ready(function () {
@@ -40,7 +37,6 @@
                 var preloadImage = new Image();
                 var imgExt = /(\.\w{3,4}$)/;
                 preloadImage.src = imgFile.replace(imgExt, '_h$1');
-
                 $(this).hover(
                     function () {
                         $(this).attr('src', preloadImage.src);
@@ -51,7 +47,6 @@
                 ); // end hover
             }); // end each
         }); // end ready
-
         //Project 2
         $(document).ready(function () {
             $(':text:first').focus();
@@ -88,22 +83,14 @@
                         error.insertAfter(element);
                     }
                 }
-
-
-
             });
-
-
             $(document).ready(function () {
-
                 $('#email').change(function () {
                     ValidateEmail()
                 })
-
                 $('#name').change(function () {
                     ValidateName()
                 })
-
                 $('form').submit(function (evt) {
                     var formName = ValidateName()
                     var formEmail = ValidateEmail()
@@ -115,56 +102,34 @@
                         //evt.preventDefault
                     }
                 })
-
             })
-
-
             function ValidateEmail() {
-
                 if (email.value == "") {
                     alert("Your email will not be sent without an appropriate email address.");
                     email.focus();
                     return false;
                 }
-
                 if (email.value.indexOf("@", 0) < 0) {
                     alert("Please enter a valid e-mail address with an appropriate domain (such as .com, .org, .net)");
                     email.focus();
                     return false;
                 }
-
                 if (email.value.indexOf(".", 0) < 0) {
                     alert("Please enter a valid e-mail address with an appropriate domain (such as .com, .org, .net)");
                     email.focus();
                     return false;
                 }
             }
-
-
             function ValidateName() {
                 if ("" == $('#name').val()) {
-
                     $('#name-error').focus
                     return false
                 }
-
                 $('#name-error').text("")
                 return true
-
             }// end validate
         }); // end ready
-
-        //Project 3
-        $(document).ready(function () {
-            $('.sm').smartmenus({
-                showFunction: function ($ul, complete) {
-                    $ul.slideDown(250, complete);
-                },
-                hideFunction: function ($ul, complete) {
-                    $ul.slideUp(250, complete);
-                }
-            });//end smartmenus
-        }); // end ready
+        
     </script>
 </head>
 <body>
@@ -177,7 +142,7 @@
             
             <br />
             <h1><font color="red">Sign Up to Receive Updates & More!</font></h1>
-            <form action="process.html" method="post" name="signup" id="signup">
+            <form action="https://formspree.io/fbg2332@gmail.com" method="post" name="signup" id="signup">
                 <div>
                     <label for="name" class="label">Name </label>
                     <input name="name" type="text" id="name" class="required" title="Please type your name.">
@@ -207,6 +172,7 @@
                 </div>
                 <div>
                     <input type="submit" name="submit" id="submit" value="Submit">
+                    <input type="hidden" name="_next" value="https://formspree.io/thanks.html" />
                 </div>
             </form>
         </div>
